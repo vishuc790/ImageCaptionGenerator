@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Caption Prediction</title>
+    <style type="text/css">
+      body
+      {
+          padding: 0;
+          margin: 0;
+      }
+      .col-sm1
+      {
+        margin: 0;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 15%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+      img {
+        border: 1px solid #ddd; /* Gray border */
+        border-radius: 4px;  /* Rounded border */
+  padding: 5px; /* Some padding */
+  width: 350px; /* Set a small width */
+}
+
+/* Add a hover effect (blue shadow) */
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+      .col-sm2
+      {
+        margin: 0;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+      .col-sm3
+      {
+        margin: 0;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 80%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    </style>
+</head>
+<body>
+
+  <div class="container">
+  <div class="row">
+
+    <div class="col-sm1">
+      <span class="border border-primary">
+        <img src="{{ user_image }}" alt="User Image" class="img-thumbnail">
+      </span>
+    </div>
+
+    <div class="col-sm2">
+      <h1>Caption Generated <span class="badge badge-secondary">{{product}}</span></h1>
+    </div>
+
+    <div class="col-sm3">
+      <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+
+        <h1>Text to Speech Converter</h1>
+
+        <input onclick="speakText()" type="button" value="submit">
+
+        <script>
+            function speakText(){
+                var text = '{{product}}';
+                responsiveVoice.speak(text);
+
+            }
+        </script>
+    </div>
+
+
+
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
